@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>더하기 빨리 계산하기!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 시작 화면 -->
+        <div id="start-screen" class="screen active">
+            <h1>🧮 더하기 빨리 계산하기! 🧮</h1>
+            <div class="instructions">
+                <p>👉 5초 안에 문제를 풀고 정답을 입력하세요!</p>
+                <p>3문제 연속 정답 시 음료수 쿠폰이 지급됩니다!</p>
+                <p>준비되면 시작 버튼을 눌러주세요!</p>
+            </div>
+            <button id="start-button" class="game-button">시작하기 ▶️</button>
+        </div>
+
+        <!-- 게임 화면 -->
+        <div id="game-screen" class="screen">
+            <div class="status-bar">
+                <div class="score">연속 정답: <span id="score">0</span>/3</div>
+                <div class="timer-bar">
+                    <div id="timer-progress"></div>
+                </div>
+            </div>
+            <div class="problem">
+                <span id="number1">23</span> + <span id="number2">17</span> = ?
+            </div>
+            <div class="answer-input">
+                <input type="number" id="answer-input" pattern="[0-9]*">
+                <button id="submit-button" class="game-button">확인</button>
+            </div>
+        </div>
+
+        <!-- 결과 화면 -->
+        <div id="result-screen" class="screen">
+            <h2 id="result-message"></h2>
+            <div class="button-group">
+                <button id="retry-button" class="game-button">다시 하기 🔁</button>
+                <button id="home-button" class="game-button">홈으로 🏠</button>
+            </div>
+        </div>
+
+        <!-- 쿠폰 화면 -->
+        <div id="coupon-screen" class="screen">
+            <h2>🎉 축하합니다! 3문제를 연속 정답하셨어요!</h2>
+            <div id="coupon-container">
+                <canvas id="coupon-canvas"></canvas>
+            </div>
+            <div class="button-group">
+                <button id="save-coupon" class="game-button">쿠폰 저장하기 💾</button>
+                <button id="coupon-home" class="game-button">홈으로 🏠</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
